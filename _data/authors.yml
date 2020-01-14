@@ -1,0 +1,11 @@
+blurbdust:
+  name   : "blurbdust"
+  avatar : "/assets/images/profiles/nic.face.jpg"
+  bio    : "Sometimes I do cool stuff but usually it's only a couple times a year"
+  links:
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/blurbdust"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/blurbdust"
