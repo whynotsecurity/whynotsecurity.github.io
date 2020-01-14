@@ -58,7 +58,7 @@ plugins:
 
 author:
   name   : "whynotsecurity"
-  avatar : "/assets/images/logo/jpeg/whynotsecurity.logo.final.prop.1_0.1x.jpg"
+  avatar : "/assests/images/logo/jpeg/whynotsecurity.logo.final.prop.1_0.1x.jpg"
   bio    : "Why Not Security?"
   links:
     - label: "Twitter"
