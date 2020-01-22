@@ -9,3 +9,16 @@ blurbdust:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/blurbdust"
+
+b1gbroth3r:
+  name   : "b1gbroth3r"
+  avatar : "/assets/images/profiles/james.face.gif"
+  bio    : "Professional over-thinker, google's for a living."
+  links:
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/your_b1gbroth3r"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/b1gbroth3r"
+
