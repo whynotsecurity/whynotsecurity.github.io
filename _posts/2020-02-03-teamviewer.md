@@ -8,6 +8,7 @@ tags:
   - blurbdust
 share: false
 ---
+
 Oh man where to even begin with this one. This was a crazy ride and I learned a ton along the way. 
 
 TL;DR: TeamViewer stored user passwords encrypted with AES-128-CBC with they key of `0602000000a400005253413100040000` and iv of `0100010067244F436E6762F25EA8D704` in the Windows registry. If the password is reused anywhere, privilege escalation is possible. If you do not have RDP rights to machine but TeamViewer is installed, you can use TeamViewer to remote in. TeamViewer also lets you copy data or schedule tasks to run through their Service, which runs as `NT AUTHORITY\SYSTEM`, so a low privilege user can immediately go to `SYSTEM` with a `.bat` file. This was assigned CVE-2019-18988. 
