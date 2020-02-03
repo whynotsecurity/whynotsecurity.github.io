@@ -108,13 +108,21 @@ Since you stuck around this long, here is a Google dork to find some TeamViewer 
 
 
 Timeline:
+
 November 05th, 2019: Reach out to @TeamViewer_help on Twitter
+
 November 05th, 2019: Send email to the Director of Security
+
 November 14th, 2019: Request CVE based on precedent set by CVE-2014-1812
+
 November 15th, 2019: Receive CVE-2019-18988
+
 November 15th, 2019: Send email to Director of Security notifying them there is now a CVE assigned to this
+
 November 18th, 2019: Receive first and only email back from vendor "We're looking into it" email
+
 January  13th, 2020: Status update request email sent to Director of Security
+
 February 03rd, 2020: Publish writeup
 
 
