@@ -22,3 +22,14 @@ b1gbroth3r:
       icon: "fab fa-fw fa-github"
       url: "https://github.com/b1gbroth3r"
 
+knavesec:
+  name   : "knavesec"
+  avatar : "/assets/images/profiles/knavesec.png"
+  bio    : "I like dogs, so I research the dogs of security (Kerb & BloodHound)"
+  links:
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/knavesec"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/knavesec"
