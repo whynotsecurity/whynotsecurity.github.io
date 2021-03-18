@@ -15,10 +15,10 @@ CredMaster: Easy & Anonymous Password Spraying
 
 [github.com/knavesec/CredMaster](https://github.com/knavesec/CredMaster)
 
-\- [TLDR](tldr)
-\- [Staying Anonymous](staying-anonymous)
-\- [Plugins](plugins)
-\- [Detections](detections)
+- [TLDR](#tldr)
+- [Staying Anonymous](#staying-anonymous)
+- [Plugins](#plugins)
+- [Detections](#detections)
 
 
 ## TLDR
