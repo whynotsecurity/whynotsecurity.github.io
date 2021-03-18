@@ -15,6 +15,12 @@ CredMaster: Easy & Anonymous Password Spraying
 
 [github.com/knavesec/CredMaster](https://github.com/knavesec/CredMaster)
 
+\- [TLDR](tldr)
+\- [Staying Anonymous](staying-anonymous)
+\- [Plugins](plugins)
+\- [Detections](detections)
+
+
 ## TLDR
 
 This tool was designed during a red team engagement while trying to beat a pesky password spray throttle limitation. It now serves as an example of what an adept attacker can build.
@@ -84,11 +90,15 @@ Currently, there are 5 plugins: Office365, MSOL, Okta, FortinetVPN and HTTP meth
 I tried to make future development easy, providing a template and instructions to contribute. More plugins == more fun.
 
 
-## Detection and Mitigation
+## Detections
 
-Since CredMaster automatically spoofs information, the best way to detect is based off the headers being present in the first place. This tool spoofs the headers in the same way, introducing a "X-My-{Header}" that overwrites the original header. Anywhere dealing with authentication shouldn't allow authentication attempts from AWS APIs, especially with these headers.
+Since CredMaster automatically spoofs information, the best way to detect is based off the headers being present in the first place. Anywhere dealing with authentication shouldn't allow authentication attempts from AWS APIs, especially with these headers. A few potential methods of detection are:
 
-I will note, I'm not great with detection and mitigation direction. Hopefully someone can find better methods.
+* The presence of "X-My-" headers (weak detection, could lead to false positives)
+* The presence of "x-amzn-apigateway-id" headers (stronger detection, only API gateways have this header)
+* Trend analysis, a significant influx of requests with the identifiers shown above
+
+I will note, I'm not great with detection and mitigation techniques. Hopefully someone can find better methods. If you do find better techniques, let me know and I'd be happy to update this blog
 
 
 Feel free to reach out with any questions, I'm always willing to chat.
