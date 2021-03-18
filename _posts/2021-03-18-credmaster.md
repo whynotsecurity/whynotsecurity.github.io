@@ -17,7 +17,7 @@ CredMaster: Easy & Anonymous Password Spraying
 
 ## TLDR
 
-This tool was designed during a red team engagement while trying to beat a pesky password spray throttle limitations. It now serves as an example of what an adept attacker can build.
+This tool was designed during a red team engagement while trying to beat a pesky password spray throttle limitation. It now serves as an example of what an adept attacker can build.
 
 CredMaster provides a method of running anonymous password sprays against endpoints in a simple, easy to use tool. The FireProx tool provides the rotating request IP, while the base of CredMaster spoofs all other identifying information.
 
@@ -93,4 +93,4 @@ I will note, I'm not great with detection and mitigation direction. Hopefully so
 
 Feel free to reach out with any questions, I'm always willing to chat.
 
-- [@knavesec](https://twitter.com/knavesec)
+\- [@knavesec](https://twitter.com/knavesec)
