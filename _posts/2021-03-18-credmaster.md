@@ -16,6 +16,9 @@ CredMaster: Easy & Anonymous Password Spraying
 [github.com/knavesec/CredMaster](https://github.com/knavesec/CredMaster)
 
 - [TLDR](#tldr)
+- [Setup](#setup)
+- [Background](#background)
+- [Throttle Evasion](#throttle-evasion)
 - [Staying Anonymous](#staying-anonymous)
 - [Plugins](#plugins)
 - [Detections](#detections)
@@ -35,6 +38,54 @@ Current plugins include:
 - HTTP Basic/Digest/NTLM methods
 
 ![general](https://raw.githubusercontent.com/whynotsecurity/whynotsecurity.github.io/master/assests/images/credmaster-screenshots/credmaster-default.png)
+
+
+## Setup
+
+For some quick setup and cool features.
+
+To use the tool, you'll have to get an AWS access key and secret access key. A great walkthrough can be found here: https://bond-o.medium.com/aws-pass-through-proxy-84f1f7fa4b4b. If you're concerned about AWS costs, I've been using it extensively with zero costs associated. I believe the metric is something like a few pennies per million requests.
+
+Now, gather a list of users/passwords, and you're ready to spray. The most simple way to spray can be found in the example command:
+
+```
+python3 credmaster.py --plugin <pluginname> -u userfile -p passwordfile -a useragentfile --access_key <key> --secret_access_key <key2>
+```
+
+Thats it. All you need. But, just because that's all you need, there's still more you want! A few cool options:
+
+- `-o` File output
+- `-d/--delay` Delay between passwords, example: try a password every X minutes
+- `--passwordsperdelay` Number of passwords to try per delay cycle, example: try X passwords per Y minutes
+- Jitter min & max limits
+- `--config` A config file to store AWS data, don't hardcode stuff if not necessary
+- `--clean` Remove all APIs from AWS, helpful if things aren't cleaned up properly
+
+I like to set it up to run over a long list of passwords, with a delay set up reset lockout counters, but its whatever works for you.
+
+
+## Background
+
+Normal password spraying tools do exactly what they're designed to do: make an authentication request in order to test the validity of credentials. Unfortunately, this request is made from your local machine, which leaks the IP address. That IP can be blocked, blacklisted, traced, etc.
+
+The next iteration of the game was to spin up proxies to route your traffic through, which would mask your IP address. This was taken to an automated fashion by Mike Felch ([@ustayready](https://twitter.com/ustayready)) in his [CredKing](https://github.com/ustayready/CredKing) tool, which would dynamically create AWS Lambdas in the cloud to submit requests on your behalf. These Lambdas would maintain the same IP address on each request, but the proxy aspect helped keep your information safe. With enough Lambdas, you could spread your authentication attempts across a high number of IP addresses which could help beat throttle rate-limiting. This tool automatically generated Lambdas, then used pre-designed "plugins" to perform the authentication.
+
+Felch's next password spraying game-changer was the introduction of the [FireProx](https://github.com/ustayready/fireprox) tool. This would spin up AWS APIs as a HTTP pass-though proxy. Any request submitted to the API is made to the endpoint specified, this obscures your local machine from the target system. The API rotates your IP address with every request in order to beat IP-based throttle detections and anonymize your machine.
+
+CredMaster is an amalgamation of the two: the plugin-based CredKing suite used to dynamically create FireProx APIs for spraying. CredMaster also does a few other things on the back end to spoof headers, stay anonymous and beat throttling.
+
+
+## Throttle Evasion
+
+Now, I certainly can't claim that this will completely evade password spray rate-limiting. What I can claim is that it can provide some of the base throttle evasion to date.
+
+Throttle detection _does_ work on a case-by-case basis, a targets on-prem systems are likely to have less sophisticated rate-limiting capabilities. Larger authentication providers like Microsoft & Okta do a good job of detecting and throtting password spray attempts, which make life more difficult for us!
+
+Microsoft employs the Azure Smart Lockout defense system. If a password spray is detected, it will show every account as "locked" regardless of valid password. This detection system is proprietary, so it makes analysis more difficult. According to DaftHack's MSOLSpray tool, use with FireProx appeared to be able to bypass Smart Lockout during testing. My own testing has shown the same.
+
+Okta appears to be a tougher nut to crack. Their detection system _appears_ to be based off `number of auth attempts / time` or some variation of that. Through use of any tool, I've not yet been able to sufficiently beat Okta's throttle attempts. I will note that a single thread and a relatively high jitter has allowed the spray to last a bit longer, though it does end in throttle after a while. Typically, I spray with a thread and high jitter, filter out the throttled attempts, then try again later with the other accounts to get full coverall.
+
+Further research is necessary for all plugins and methods. Each plugin has a section for "throttle notes" on the Wiki.
 
 
 ## Staying Anonymous
@@ -98,7 +149,7 @@ Since CredMaster automatically spoofs information, the best way to detect is bas
 * The presence of "x-amzn-apigateway-id" headers (stronger detection, only API gateways have this header)
 * Trend analysis, a significant influx of requests with the identifiers shown above
 
-I will note, I'm not great with detection and mitigation techniques. Hopefully someone can find better methods. If you do find better techniques, let me know and I'd be happy to update this blog
+I will note, I'm not great with detection and mitigation techniques. Hopefully someone can find better methods. If you do find better techniques, let me know and I'd be happy to update this blog, give a shoutout, etc.
 
 
 Feel free to reach out with any questions, I'm always willing to chat.
