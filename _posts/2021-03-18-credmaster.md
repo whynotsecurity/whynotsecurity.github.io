@@ -83,7 +83,7 @@ Throttle detection _does_ work on a case-by-case basis, a targets on-prem system
 
 Microsoft employs the Azure Smart Lockout defense system. If a password spray is detected, it will show every account as "locked" regardless of valid password. This detection system is proprietary, so it makes analysis more difficult. According to DaftHack's MSOLSpray tool, use with FireProx appeared to be able to bypass Smart Lockout during testing. My own testing has shown the same.
 
-Okta appears to be a tougher nut to crack. Their detection system _appears_ to be based off `number of auth attempts / time` or some variation of that. Through use of any tool, I've not yet been able to sufficiently beat Okta's throttle attempts. I will note that a single thread and a relatively high jitter has allowed the spray to last a bit longer, though it does end in throttle after a while. Typically, I spray with a thread and high jitter, filter out the throttled attempts, then try again later with the other accounts to get full coverall.
+Okta appears to be a tougher nut to crack. Their detection system _appears_ to be based off some variation `total number of auth attempts / time` regardless of who/what IP makes the request. Through use of any tool, I've not yet been able to sufficiently beat Okta's throttle attempts. I will note that a single thread and a relatively high jitter has allowed the spray to last a bit longer, though it does end in throttle after a while. Typically, I spray with a thread and high jitter, filter out the throttled attempts, then try again later with the other accounts to get full coverall.
 
 Further research is necessary for all plugins and methods. Each plugin has a section for "throttle notes" on the Wiki.
 
