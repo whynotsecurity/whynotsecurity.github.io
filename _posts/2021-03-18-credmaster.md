@@ -44,7 +44,7 @@ Current plugins include:
 
 For some quick setup and cool features.
 
-To use the tool, you'll have to get an AWS access key and secret access key. A great walkthrough can be found here: https://bond-o.medium.com/aws-pass-through-proxy-84f1f7fa4b4b. If you're concerned about AWS costs, I've been using it extensively with zero costs associated. I believe the metric is something like a few pennies per million requests.
+To use the tool, you'll have to get an AWS access key and secret access key. A great walkthrough can be found here: [https://bond-o.medium.com/aws-pass-through-proxy-84f1f7fa4b4b](https://bond-o.medium.com/aws-pass-through-proxy-84f1f7fa4b4b). If you're concerned about AWS costs, I've been using it extensively with zero costs associated. I believe the metric is something like a few pennies per million requests.
 
 Now, gather a list of users/passwords, and you're ready to spray. The most simple way to spray can be found in the example command:
 
