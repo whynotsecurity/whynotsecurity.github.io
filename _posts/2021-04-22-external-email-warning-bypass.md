@@ -1,5 +1,5 @@
 ---
-title: "MS External Email Warning Bypass"
+title: "Office365 Federated User Enumeration via Response Trend "
 date: 2021-04-22T00:00:03-05:00
 categories:
   - blog
@@ -13,7 +13,16 @@ share: false
 ---
 
 
-Removing "EXTERNAL EMAIL" Warnings from your Phish
+Office365 Federated User Enumeration via Response Trend Analysis
+
+
+
+
+
+
+
+
+
 
 [POC](https://gist.github.com/knavesec/570ddd0cd7e00d02e87121576a677b59)
 
@@ -127,7 +136,7 @@ Then for each part of the HTML in the <body> section add ‘class=“CLASSNAME�
 
 ## Limitations
 
-As stated before adding this to your phish will not hurt its performance, however there are some things to take note of.
+As stated before adding this to your phish will not hurt its performance (UPDATE: unless they detect on this behavior, see below), however there are some things to take note of.
 
 1. Still displays warning message in preview
 
@@ -148,6 +157,7 @@ Outlook has a method of “classifying” emails, and setting appropriate labels
 
 A link to an applicable blog can be found [here](https://techcommunity.microsoft.com/t5/exchange-team-blog/native-external-sender-callouts-on-email-in-outlook/ba-p/2250098).
 
+UPDATE: Additionally, there is one company who has provided detections for this kind of phishing email, Inky. A link to some of their marketing material for this issue can be found here: [https://www.inky.com/understanding-phishing-disappearing-banners](https://www.inky.com/understanding-phishing-disappearing-banners). Note that I am in no way associate with this company, nor can I vouch for their products in an official capacity as I haven't used them myself. I'm just happy they've shown an effort in remediating this problem.
 
 ## Disclosure Timeline
 
@@ -155,8 +165,9 @@ A link to an applicable blog can be found [here](https://techcommunity.microsoft
 2. May 7, 2020 - Disclosure to MSRC
 3. June 1, 2020 - MSRC "Won't Fix"
 4. April 21, 2021 - Public disclosure on [Twitter](https://twitter.com/ldionmarcil/status/1384987686113583107)
+4. April 21, 2021 - My disclosure on [Twitter](https://twitter.com/knavesec/status/1385266648668536835)
 
-Ultimately after discovery, research and "won't fix" from MSRC, I decided not to disclose publically. I believed that even with potential remediation techniques, the ability to obscure warning signs would severely impact the community since phishing is the biggest cause of compromise.
+Ultimately after discovery, research and "won't fix" from MSRC, I decided not to disclose publicly. I believed that even with potential remediation techniques, the ability to obscure warning signs would severely impact the community since phishing is the biggest cause of compromise. I only chose to post this info after it had already been publicized online.
 
 Please apply remediation advice, keep your users safe. For all you red teamers, happy hunting.
 
