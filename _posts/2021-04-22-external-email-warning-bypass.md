@@ -1,5 +1,5 @@
 ---
-title: "Office365 Federated User Enumeration via Response Trend "
+title: "External Email Warning Bypass"
 date: 2021-04-22T00:00:03-05:00
 categories:
   - blog
@@ -13,16 +13,7 @@ share: false
 ---
 
 
-Office365 Federated User Enumeration via Response Trend Analysis
-
-
-
-
-
-
-
-
-
+External Email Warning Bypass for Office365 & Outlook
 
 [POC](https://gist.github.com/knavesec/570ddd0cd7e00d02e87121576a677b59)
 
