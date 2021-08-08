@@ -19,7 +19,7 @@ EyeWitnessTheFitness
 
 ## TLDR
 
-External scan prevention systems make recon and enum difficult, one of the best ways to bypass that is to distribute your operations to different IP addresses. Fireprox makes that easy by rotating the IP on every request, but for a tool like Eyewitness, you'd need to generate a new Fireprox API for every url.
+External scan prevention systems make recon and enum difficult, one of the best ways to bypass that is to distribute your operations to different IP addresses. [Fireprox](https://github.com/ustayready/fireprox) (shoutout [@ustayready](https://twitter.com/ustayready)) makes that easy by rotating the IP on every request, but for a tool like Eyewitness, you'd need to generate a new Fireprox API for every url.
 
 Instead of doing that, use this tool to generate a single Fireprox API that encompasses all your needs, then outputs to a file compatible for direct use with Eyewitness. Easy distributed scan prevention bypass for external recon.
 
