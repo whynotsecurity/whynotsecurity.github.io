@@ -26,7 +26,7 @@ Instead of doing that, use this tool to generate a single Fireprox API that enco
 
 ## Theory
 
-On a red team engagement recently, we were doing some limited enumeration of client network URLs but after a certain amount of requests with EyeWitness, they would all start timing out and fail to load. When investigating we were able to load pages manually, but any type of scan would get blocked after a set of time. We needed IP rotation, with the functionality of EyeEitness, enter: TheFitness.
+On a red team engagement recently, we were doing some limited enumeration of client network URLs but after a certain amount of requests with EyeWitness, they would all start timing out and fail to load. When investigating we were able to load pages manually, but any type of scan would get blocked after a set of time. We needed IP rotation, with the functionality of EyeWitness, enter: TheFitness.
 
 I had already used FireProx generation extensively in my CredMaster tool, but I didn't want to generate a unique API for every host I wanted to witness. For 100 hosts generating 100 APIs is just silly and inefficient, so I started to dig into how the API was generated at the template level. On each template, you can specify granular details about what you want your end URI functionality to do. The standard FireProx template just maps anything after the initial `/` to the end website desired for a straight pass-through. Instead of doing that, I aliased the first URI to be the target domain:
 
