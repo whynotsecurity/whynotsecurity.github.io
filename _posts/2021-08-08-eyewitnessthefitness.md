@@ -1,6 +1,6 @@
 ---
 title: "EyeWitnessTheFitness"
-date: TODO
+date: 2021-08-08T00:00:03-05:00
 categories:
   - blog
 tags:
