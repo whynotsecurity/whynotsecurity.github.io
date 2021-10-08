@@ -25,7 +25,7 @@ repository: whynotsecurity/whynotsecurity.github.io
 
 # Build settings
 markdown: kramdown
-remote_theme: mmistakes/minimal-mistakes
+remote_theme: whynotsecurity/minimal-mistakes
 # Outputting
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
