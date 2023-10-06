@@ -277,7 +277,7 @@ A few other nice, but not ground breaking additions that were made:
 As said before, thank you to all those who directly or indirectly supported this project. This list of contributors can always be found on the CredMaster Readme page and within the wiki. The following two made multiple contributions, thank you to them. 
 
 - [Andy](https://twitter.com/ZephrFish)
-- [Logan](https://twitter.com/TheToddLuci0)
+- [Logan](https://infosec.exchange/@TheToddLuci0)
 
 
 Always feel free to reach out, thanks for taking the time to read.
